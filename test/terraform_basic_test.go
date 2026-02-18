@@ -46,4 +46,4 @@ func TestEC2VPC(t *testing.T) {
 	t.Logf("EC2 public IPs: %v", publicIPs)
 }
 
-}
+
