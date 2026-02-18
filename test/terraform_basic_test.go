@@ -32,6 +32,18 @@ func TestEC2VPC(t *testing.T) {
 	assert.NotEmpty(t, publicIPs, "EC2 public IPs should not be empty")
 
 	// Optional: print outputs
+	/*t.Logf("EC2 instance IDs: %v", instanceIDs)
+	t.Logf("EC2 public IPs: %v", publicIPs)*/
+
+	assert.Equal(t, "t3.micro", instance.InstanceType, "Instance type should match")
+	assert.Equal(t, "dev", instance.Tags["Environment"])
+	assert.Equal(t, "atyeti-inc", instance.Tags["Owner"])
+	assert.NotEmpty(t, instanceIDs, "EC2 instance IDs should not be empty")
+	assert.NotEmpty(t, publicIPs, "EC2 public IPs should not be empty")
+
+	// Optional: print outputs
 	t.Logf("EC2 instance IDs: %v", instanceIDs)
 	t.Logf("EC2 public IPs: %v", publicIPs)
 }
+
+
